@@ -25,8 +25,8 @@ jobs:
       run: |
         DOCKER_BUILDKIT=1 \
         docker build \
-        --tag ghcr.io/borgbase/vorta-docker:$(echo $GITHUB_SHA | head -c7) \
-        --tag ghcr.io/borgbase/vorta-docker:latest \
+        --tag ghcr.io/Meowcat285/vorta-docker:$(echo $GITHUB_SHA | head -c7) \
+        --tag ghcr.io/Meowcat285/vorta-docker:latest \
         .
 
     - name: Container registry login
@@ -36,5 +36,5 @@ jobs:
     - name: Push image to GitHub
       if: github.ref == 'refs/heads/main'
       run: |
-        docker push ghcr.io/borgbase/vorta-docker:$(echo $GITHUB_SHA | head -c7)
-        docker push ghcr.io/borgbase/vorta-docker:latest
+        docker push ghcr.io/Meowcat285/vorta-docker:$(echo $GITHUB_SHA | head -c7)
+        docker push ghcr.io/Meowcat285/vorta-docker:latest
