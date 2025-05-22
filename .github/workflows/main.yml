@@ -17,9 +17,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Setup tmate debug session
-      uses: mxschmitt/action-tmate@v3
-      if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
+    # - name: Setup tmate debug session
+    #   uses: mxschmitt/action-tmate@v3
+    #   if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled }}
 
     - name: Build container image
       run: |
